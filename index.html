@@ -10,17 +10,16 @@
 <!-- 🔍 Search -->
 <input type="text" id="searchInput" placeholder="Search..." class="search-box"/>
 
-<!-- 📂 Categories -->
+<!-- 📂 Tabs -->
 <div class="tabs">
-  <span class="active">Popular</span>
-  <span>Must Watch</span>
-  <span>New & Hot</span>
+  <span class="active" onclick="showHome()">Home</span>
+  <span onclick="showTrending()">Trending</span>
 </div>
 
-<!-- 🎬 Drama Grid -->
+<!-- 🎬 Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- ▶ Player -->
+<!-- ▶ Player (hidden screen) -->
 <div id="playerScreen" class="hidden">
   <button onclick="goBack()">⬅ Back</button>
   <iframe id="player" allowfullscreen></iframe>
@@ -28,8 +27,8 @@
 
 <!-- 🔻 Bottom Nav -->
 <div class="bottom-nav">
-  <span>🏠 Home</span>
-  <span>🔥 Trending</span>
+  <span onclick="showHome()">🏠 Home</span>
+  <span onclick="showTrending()">🔥 Trending</span>
   <span>⭐ VIP</span>
   <span>👤 Me</span>
 </div>

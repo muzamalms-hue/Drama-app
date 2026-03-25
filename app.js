@@ -1,4 +1,6 @@
 const dramaList = document.getElementById("dramaList");
+const playerScreen = document.getElementById("playerScreen");
+const player = document.getElementById("player");
 
 let allDramas = dramas;
 
@@ -16,17 +18,30 @@ function displayDramas(list) {
       <p>${data.title}</p>
     `;
 
-    // ▶ Direct open video
-    card.onclick = () => {
-      window.open(data.video, "_blank");
-    };
+    card.onclick = () => openVideo(data.video);
 
     dramaList.appendChild(card);
   });
 }
 
+// ▶ Open video inside app
+function openVideo(video) {
+  dramaList.style.display = "none";
+  playerScreen.classList.remove("hidden");
+  player.src = video + "?autoplay=1";
+}
+
+// 🔙 Back
+function goBack() {
+  dramaList.style.display = "grid";
+  playerScreen.classList.add("hidden");
+  player.src = "";
+}
+
 // 🏠 Home
 function showHome() {
+  dramaList.style.display = "grid";
+  playerScreen.classList.add("hidden");
   displayDramas(allDramas);
 }
 

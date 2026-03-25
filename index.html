@@ -3,29 +3,35 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drama App</title>
-
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f172a">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2 class="header">🎬 Drama App</h2>
+<!-- 🔍 Search -->
+<input type="text" id="searchInput" placeholder="Search..." class="search-box"/>
 
-<input 
-  type="text" 
-  id="searchInput" 
-  placeholder="Search drama..." 
-  class="search-box"
-/>
+<!-- 📂 Categories -->
+<div class="tabs">
+  <span class="active">Popular</span>
+  <span>Must Watch</span>
+  <span>New & Hot</span>
+</div>
 
-<div id="dramaList" class="container"></div>
+<!-- 🎬 Drama Grid -->
+<div id="dramaList" class="grid"></div>
 
-<div id="episodeScreen" class="hidden">
+<!-- ▶ Player -->
+<div id="playerScreen" class="hidden">
   <button onclick="goBack()">⬅ Back</button>
-  <h2 id="dramaTitle"></h2>
-  <div id="episodes"></div>
+  <iframe id="player" allowfullscreen></iframe>
+</div>
+
+<!-- 🔻 Bottom Nav -->
+<div class="bottom-nav">
+  <span>🏠 Home</span>
+  <span>🔥 Trending</span>
+  <span>⭐ VIP</span>
+  <span>👤 Me</span>
 </div>
 
 <script src="data.js"></script>

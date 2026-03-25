@@ -1,10 +1,7 @@
 const dramaList = document.getElementById("dramaList");
-const episodeScreen = document.getElementById("episodeScreen");
-const episodesDiv = document.getElementById("episodes");
+const playerScreen = document.getElementById("playerScreen");
+const player = document.getElementById("player");
 
-let allDramas = dramas;
-
-// 🎬 Show dramas
 function displayDramas(list) {
   dramaList.innerHTML = "";
 
@@ -14,43 +11,37 @@ function displayDramas(list) {
 
     card.innerHTML = `
       <img src="${data.thumbnail}">
-      <h3>${data.title}</h3>
+      <p>${data.title}</p>
     `;
 
-    card.onclick = () => openDrama(data);
+    card.onclick = () => openVideo(data.video);
 
     dramaList.appendChild(card);
   });
 }
 
-// ▶ Open drama (single video)
-function openDrama(data) {
+function openVideo(video) {
   dramaList.style.display = "none";
-  episodeScreen.classList.remove("hidden");
+  playerScreen.classList.remove("hidden");
 
-  document.getElementById("dramaTitle").innerText = data.title;
-
-  episodesDiv.innerHTML = `
-    <iframe src="${data.video}" allowfullscreen></iframe>
-  `;
+  player.src = video;
 }
 
-// 🔙 Back
 function goBack() {
-  dramaList.style.display = "block";
-  episodeScreen.classList.add("hidden");
+  dramaList.style.display = "grid";
+  playerScreen.classList.add("hidden");
+  player.src = "";
 }
 
-// 🔍 Search
+// Search
 document.getElementById("searchInput").addEventListener("input", function(e) {
   const value = e.target.value.toLowerCase();
 
-  const filtered = allDramas.filter(d =>
+  const filtered = dramas.filter(d =>
     d.title.toLowerCase().includes(value)
   );
 
   displayDramas(filtered);
 });
 
-// Load
-displayDramas(allDramas);
+displayDramas(dramas);

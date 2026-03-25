@@ -2,6 +2,9 @@ const dramaList = document.getElementById("dramaList");
 const playerScreen = document.getElementById("playerScreen");
 const player = document.getElementById("player");
 
+let allDramas = dramas;
+
+// 🎬 Show dramas
 function displayDramas(list) {
   dramaList.innerHTML = "";
 
@@ -20,28 +23,43 @@ function displayDramas(list) {
   });
 }
 
+// ▶ Open video
 function openVideo(video) {
   dramaList.style.display = "none";
   playerScreen.classList.remove("hidden");
-
   player.src = video;
 }
 
+// 🔙 Back
 function goBack() {
   dramaList.style.display = "grid";
   playerScreen.classList.add("hidden");
   player.src = "";
 }
 
-// Search
+// 🏠 Home
+function showHome() {
+  dramaList.style.display = "grid";
+  playerScreen.classList.add("hidden");
+  displayDramas(allDramas);
+}
+
+// 🔥 Trending (demo filter)
+function showTrending() {
+  const trending = allDramas.slice(0, 3); // first 3 as trending
+  displayDramas(trending);
+}
+
+// 🔍 Search
 document.getElementById("searchInput").addEventListener("input", function(e) {
   const value = e.target.value.toLowerCase();
 
-  const filtered = dramas.filter(d =>
+  const filtered = allDramas.filter(d =>
     d.title.toLowerCase().includes(value)
   );
 
   displayDramas(filtered);
 });
 
-displayDramas(dramas);
+// Load
+displayDramas(allDramas);

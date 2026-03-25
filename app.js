@@ -24,11 +24,16 @@ function displayDramas(list) {
   });
 }
 
-// ▶ Open video inside app
+// ▶ Open video (FIXED)
 function openVideo(video) {
   dramaList.style.display = "none";
   playerScreen.classList.remove("hidden");
-  player.src = video + "?autoplay=1";
+
+  // 🔥 FIX: reload iframe properly
+  player.src = "";
+  setTimeout(() => {
+    player.src = video + "?playsinline=1&rel=0";
+  }, 100);
 }
 
 // 🔙 Back

@@ -4,6 +4,7 @@ const episodesDiv = document.getElementById("episodes");
 
 let allDramas = dramas;
 
+// 🎬 Show dramas
 function displayDramas(list) {
   dramaList.innerHTML = "";
 
@@ -22,30 +23,25 @@ function displayDramas(list) {
   });
 }
 
+// ▶ Open drama (single video)
 function openDrama(data) {
   dramaList.style.display = "none";
   episodeScreen.classList.remove("hidden");
 
   document.getElementById("dramaTitle").innerText = data.title;
-  episodesDiv.innerHTML = "";
 
-  data.episodes.forEach(ep => {
-    const div = document.createElement("div");
-
-    div.innerHTML = `
-      <p>${ep.name}</p>
-      <iframe src="${ep.video}" allowfullscreen></iframe>
-    `;
-
-    episodesDiv.appendChild(div);
-  });
+  episodesDiv.innerHTML = `
+    <iframe src="${data.video}" allowfullscreen></iframe>
+  `;
 }
 
+// 🔙 Back
 function goBack() {
   dramaList.style.display = "block";
   episodeScreen.classList.add("hidden");
 }
 
+// 🔍 Search
 document.getElementById("searchInput").addEventListener("input", function(e) {
   const value = e.target.value.toLowerCase();
 
@@ -56,4 +52,5 @@ document.getElementById("searchInput").addEventListener("input", function(e) {
   displayDramas(filtered);
 });
 
+// Load
 displayDramas(allDramas);

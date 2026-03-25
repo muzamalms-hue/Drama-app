@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama App</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="header">🎬 Drama App</h2>
+
+<input 
+  type="text" 
+  id="searchInput" 
+  placeholder="Search drama..." 
+  class="search-box"
+/>
+
+<div id="dramaList" class="container"></div>
+
+<div id="episodeScreen" class="hidden">
+  <button onclick="goBack()">⬅ Back</button>
+  <h2 id="dramaTitle"></h2>
+  <div id="episodes"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -8,29 +8,25 @@
 <body>
 
 <!-- 🔍 Search -->
-<input type="text" id="searchInput" placeholder="Search..." class="search-box"/>
+<div class="search-wrap">
+  <input type="text" id="searchInput" placeholder="Search dramas...">
+</div>
 
 <!-- 📂 Tabs -->
 <div class="tabs">
-  <span class="active" onclick="showHome()">Home</span>
-  <span onclick="showTrending()">Trending</span>
+  <span class="active" onclick="showHome()">POPULAR</span>
+  <span onclick="showTrending()">TRENDING</span>
 </div>
 
 <!-- 🎬 Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- ▶ Player (hidden screen) -->
-<div id="playerScreen" class="hidden">
-  <button onclick="goBack()">⬅ Back</button>
-  <iframe id="player" allowfullscreen></iframe>
-</div>
-
 <!-- 🔻 Bottom Nav -->
 <div class="bottom-nav">
-  <span onclick="showHome()">🏠 Home</span>
-  <span onclick="showTrending()">🔥 Trending</span>
-  <span>⭐ VIP</span>
-  <span>👤 Me</span>
+  <div onclick="showHome()">🏠<p>Home</p></div>
+  <div onclick="showTrending()">🔥<p>Trending</p></div>
+  <div>⭐<p>VIP</p></div>
+  <div>👤<p>Me</p></div>
 </div>
 
 <script src="data.js"></script>

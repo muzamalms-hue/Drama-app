@@ -21,6 +21,23 @@
 <!-- 🎬 Grid -->
 <div id="dramaList" class="grid"></div>
 
+<!-- ▶ Player Screen -->
+<div id="playerScreen" class="hidden">
+  <button class="back-btn" onclick="goBack()">← Back</button>
+
+  <iframe 
+    id="player"
+    width="100%"
+    height="220"
+    src=""
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
 <!-- 🔻 Bottom Nav -->
 <div class="bottom-nav">
   <div onclick="showHome()">🏠<p>Home</p></div>

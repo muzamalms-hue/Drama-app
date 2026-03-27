@@ -17,6 +17,6 @@ const dramas = [
     title: "Crorepati ki Dulhaniya",
     video: "f49So1y5xg0",
     thumbnail: "https://img.youtube.com/vi/f49So1y5xg0/hqdefault.jpg",
-    category: "trending"
+    category: "popular"
   }
 ];

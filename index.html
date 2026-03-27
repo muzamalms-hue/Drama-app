@@ -4,34 +4,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drama App</title>
 
-  <!-- 🔥 Ads Script -->
+  <!-- Ads Script -->
   <script src="https://quge5.com/88/tag.min.js" data-zone="223347" async data-cfasync="false"></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- 🔍 Search -->
+<!-- Search -->
 <div class="search-wrap">
-  <input type="text" id="searchInput" placeholder="Search dramas...">
+  <input type="text" placeholder="Search dramas...">
 </div>
 
-<!-- 📂 Tabs -->
+<!-- Tabs -->
 <div class="tabs">
   <span class="active" onclick="showHome()">POPULAR</span>
   <span onclick="showTrending()">TRENDING</span>
 </div>
 
-<!-- 🎬 Grid -->
+<!-- Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- ▶ Player Screen -->
+<!-- Player -->
 <div id="playerScreen" class="hidden">
-
   <button class="back-btn" onclick="goBack()">← Back</button>
 
-  <!-- 🔥 9:16 Player Wrapper -->
-  <div class="video-box">
+  <div class="video-container">
     <iframe 
       id="player"
       src=""
@@ -40,10 +38,9 @@
       allowfullscreen>
     </iframe>
   </div>
-
 </div>
 
-<!-- 🔻 Bottom Nav -->
+<!-- Bottom Nav -->
 <div class="bottom-nav">
   <div onclick="showHome()">🏠<p>Home</p></div>
   <div onclick="showTrending()">🔥<p>Trending</p></div>

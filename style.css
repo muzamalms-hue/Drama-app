@@ -37,11 +37,11 @@ body {
   font-weight: bold;
 }
 
-/* Grid */
+/* 🔥 GRID (2 COLUMN) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 columns */
+  gap: 12px;
   padding: 10px;
   padding-bottom: 80px;
 }
@@ -51,27 +51,29 @@ body {
   position: relative;
 }
 
+/* 🔥 Poster Style */
 .card img {
   width: 100%;
-  height: 160px;
+  aspect-ratio: 2/3; /* ✅ Netflix style */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* Trending badge */
 .badge {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 6px;
+  left: 6px;
   background: red;
-  padding: 2px 6px;
+  padding: 3px 7px;
   font-size: 10px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
+/* Title */
 .card p {
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 13px;
+  margin-top: 6px;
 }
 
 /* Player Screen */
@@ -87,20 +89,17 @@ body {
   height: 100%;
   background: black;
   z-index: 999;
-  padding: 10px;
   overflow: hidden;
 }
 
-/* 🔥 NEW: 9:16 Player */
+/* 🎬 Vertical Player */
 .video-box {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: black;
 }
 
-/* YouTube vertical fit */
 .video-box iframe {
   position: absolute;
   top: 50%;

@@ -1,6 +1,7 @@
 const list = document.getElementById("dramaList");
 const playerScreen = document.getElementById("playerScreen");
 const player = document.getElementById("player");
+const tabs = document.querySelectorAll(".tabs span");
 
 // Render
 function render(category) {
@@ -31,13 +32,11 @@ function goBack() {
 }
 
 // Tabs
-function showHome() {
-  render("popular");
+function filterCategory(event, cat) {
+  tabs.forEach(t => t.classList.remove("active"));
+  event.target.classList.add("active");
+  render(cat);
 }
 
-function showTrending() {
-  render("trending");
-}
-
-// Load default
-showHome();
+// Default
+render("popular");

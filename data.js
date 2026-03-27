@@ -12,19 +12,13 @@ const dramas = [
     category: "popular"
   },
   {
-    title: "Hindi Drama",
-    video: "HJYPm6ZAXZY",
-    thumbnail: "https://img.youtube.com/vi/HJYPm6ZAXZY/hqdefault.jpg",
-    category: "popular"
-  },
-  {
-    title: "English Drama",
+    title: "CEO ki Secret Biwi",
     video: "LrQUT5_v8eg",
     thumbnail: "https://img.youtube.com/vi/LrQUT5_v8eg/hqdefault.jpg",
     category: "popular"
   },
   {
-    title: "Korean Drama",
+    title: "Tu Raja to Mai Sikandar",
     video: "O8rmofcUSpc",
     thumbnail: "https://img.youtube.com/vi/O8rmofcUSpc/hqdefault.jpg",
     category: "popular"

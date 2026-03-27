@@ -1,70 +1,43 @@
-const dramaList = document.getElementById("dramaList");
+const list = document.getElementById("dramaList");
 const playerScreen = document.getElementById("playerScreen");
 const player = document.getElementById("player");
 
-let allDramas = dramas;
+// Render
+function render(category) {
+  list.innerHTML = "";
 
-// 🎬 Show dramas
-function displayDramas(list) {
-  dramaList.innerHTML = "";
-
-  list.forEach((data, index) => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <img src="${data.thumbnail}">
-      ${index < 3 ? '<div class="badge">🔥 Trending</div>' : ''}
-      <p>${data.title}</p>
-    `;
-
-    card.onclick = () => openVideo(data.video);
-
-    dramaList.appendChild(card);
-  });
+  dramas
+    .filter(d => d.category === category)
+    .forEach(d => {
+      list.innerHTML += `
+        <div class="card" onclick="playVideo('${d.video}')">
+          <img src="${d.thumbnail}">
+          <p>${d.title}</p>
+        </div>
+      `;
+    });
 }
 
-// ▶ Open video (FIXED)
-function openVideo(video) {
-  dramaList.style.display = "none";
+// Play
+function playVideo(id) {
   playerScreen.classList.remove("hidden");
-
-  // 🔥 FIX: reload iframe properly
-  player.src = "";
-  setTimeout(() => {
-    player.src = video + "?playsinline=1&rel=0";
-  }, 100);
+  player.src = "https://www.youtube.com/embed/" + id + "?autoplay=1";
 }
 
-// 🔙 Back
+// Back
 function goBack() {
-  dramaList.style.display = "grid";
   playerScreen.classList.add("hidden");
   player.src = "";
 }
 
-// 🏠 Home
+// Tabs
 function showHome() {
-  dramaList.style.display = "grid";
-  playerScreen.classList.add("hidden");
-  displayDramas(allDramas);
+  render("popular");
 }
 
-// 🔥 Trending
 function showTrending() {
-  displayDramas(allDramas.slice(0, 3));
+  render("trending");
 }
 
-// 🔍 Search
-document.getElementById("searchInput").addEventListener("input", function(e) {
-  const value = e.target.value.toLowerCase();
-
-  const filtered = allDramas.filter(d =>
-    d.title.toLowerCase().includes(value)
-  );
-
-  displayDramas(filtered);
-});
-
-// Load
-displayDramas(allDramas);
+// Load default
+showHome();

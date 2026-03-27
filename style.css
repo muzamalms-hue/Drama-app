@@ -88,17 +88,40 @@ body {
   background: black;
   z-index: 999;
   padding: 10px;
+  overflow: hidden;
 }
 
-#player {
+/* 🔥 NEW: 9:16 Player */
+.video-box {
+  position: relative;
   width: 100%;
-  height: 220px;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+/* YouTube vertical fit */
+.video-box iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vh;
+  height: 177.77vh;
+  transform: translate(-50%, -50%);
+  border: none;
 }
 
 /* Back button */
 .back-btn {
-  margin-bottom: 10px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  z-index: 1000;
   padding: 8px 12px;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
 
 /* Bottom Nav */

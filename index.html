@@ -26,13 +26,12 @@
 <!-- Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- Player -->
+<!-- Player Screen -->
 <div id="playerScreen" class="hidden">
   <button class="back-btn" onclick="goBack()">← Back</button>
 
-  <div class="video-container">
-    <video id="player" controls autoplay></video>
-  </div>
+  <!-- ✅ UPDATED PLAYER -->
+  <div class="video-container" id="player"></div>
 </div>
 
 <!-- Bottom Nav -->
@@ -43,6 +42,7 @@
   <div>👤<p>Me</p></div>
 </div>
 
+<!-- Scripts (ORDER IMPORTANT) -->
 <script src="data.js"></script>
 <script src="app.js"></script>
 

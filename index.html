@@ -4,11 +4,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drama App</title>
 
-  <!-- Ads Script -->
+  <!-- Monetag Ads -->
   <script src="https://quge5.com/88/tag.min.js" data-zone="223347" async></script>
 
+  <!-- Video.js -->
+  <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet"/>
+  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+
+  <!-- IMA SDK (VAST Ads) -->
+  <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .loader {
+      text-align: center;
+      color: white;
+      padding: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
 <!-- Search -->
@@ -28,12 +56,19 @@
 <!-- Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- Player -->
+<!-- Player Screen -->
 <div id="playerScreen" class="hidden">
   <button class="back-btn" onclick="goBack()">← Back</button>
 
   <div class="video-container">
-    <iframe id="player" src="" allowfullscreen></iframe>
+    <p class="loader" id="loader">Loading...</p>
+
+    <video
+      id="my-video"
+      class="video-js vjs-default-skin"
+      controls
+      preload="auto">
+    </video>
   </div>
 </div>
 
@@ -46,7 +81,47 @@
 </div>
 
 <script src="data.js"></script>
-<script src="app.js"></script>
 
-</body>
-</html>
+<script>
+let player;
+
+function openPlayer(videoUrl) {
+
+  // Monetag trigger
+  document.body.click();
+
+  document.getElementById("playerScreen").classList.remove("hidden");
+  document.getElementById("loader").style.display = "block";
+
+  if (player) {
+    player.dispose();
+  }
+
+  player = videojs('my-video');
+
+  // Set video source (Firebase link)
+  player.src({
+    src: videoUrl,
+    type: "video/mp4"
+  });
+
+  setupAds(videoUrl);
+}
+
+function setupAds(videoUrl) {
+
+  const adDisplayContainer = new google.ima.AdDisplayContainer(
+    document.getElementById('my-video'),
+    document.getElementById('my-video')
+  );
+
+  const adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+
+  const adsRequest = new google.ima.AdsRequest();
+
+  // 👉 Yahan apna Adsterra VAST tag lagana
+  adsRequest.adTagUrl = "PASTE_YOUR_VAST_TAG_HERE";
+
+  adsLoader.requestAds(adsRequest);
+
+  adsLoader.addEventListener(

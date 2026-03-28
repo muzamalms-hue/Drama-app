@@ -1,40 +1,29 @@
 const dramas = [
+  // 🔴 HINDI DRAMAS
   {
-    title: "Crorepati ki Secret Life",
-    video: "HJYPm6ZAXZY",
-    thumbnail: "https://img.youtube.com/vi/HJYPm6ZAXZY/hqdefault.jpg",
-    category: "popular"
+    title: "Hindi Drama Ep 1",
+    video: "FIREBASE_VIDEO_LINK",
+    thumbnail: "FIREBASE_THUMB_LINK",
+    category: "hindi"
   },
   {
-    title: "Crorepati ki Dulhaniya",
-    video: "f49So1y5xg0",
-    thumbnail: "https://img.youtube.com/vi/f49So1y5xg0/hqdefault.jpg",
-    category: "popular"
+    title: "Hindi Drama Ep 2",
+    video: "FIREBASE_VIDEO_LINK",
+    thumbnail: "FIREBASE_THUMB_LINK",
+    category: "hindi"
   },
   {
-    title: "CEO ki Secret Biwi",
-    video: "LrQUT5_v8eg",
-    thumbnail: "https://img.youtube.com/vi/LrQUT5_v8eg/hqdefault.jpg",
-    category: "popular"
-  },
-  {
-    title: "Tu Raja to Mai Sikandar",
-    video: "O8rmofcUSpc",
-    thumbnail: "https://img.youtube.com/vi/O8rmofcUSpc/hqdefault.jpg",
-    category: "popular"
+    title: "Hindi Drama Ep 3",
+    video: "FIREBASE_VIDEO_LINK",
+    thumbnail: "FIREBASE_THUMB_LINK",
+    category: "hindi"
   },
 
-  // 🔥 NEW ADDED
+  // 🔵 POPULAR
   {
-    title: "Secret Crorepati",
-    video: "WM3IIetxf4I",
-    thumbnail: "https://img.youtube.com/vi/WM3IIetxf4I/hqdefault.jpg",
-    category: "popular"
-  },
-  {
-    title: "The Hidden King",
-    video: "9rg53ix6hHk",
-    thumbnail: "https://img.youtube.com/vi/9rg53ix6hHk/hqdefault.jpg",
+    title: "Popular Ep 1",
+    video: "FIREBASE_VIDEO_LINK",
+    thumbnail: "FIREBASE_THUMB_LINK",
     category: "popular"
   }
 ];

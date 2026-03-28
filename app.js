@@ -1,19 +1,22 @@
 const list = document.getElementById("dramaList");
 const playerScreen = document.getElementById("playerScreen");
+const player = document.getElementById("player");
 const tabs = document.querySelectorAll(".tabs span");
 
-let currentList = [];
-let currentIndex = 0;
-
-// Render dramas
+// Render
 function render(category) {
   list.innerHTML = "";
 
-  currentList = dramas.filter(d => d.category === category);
+  const filtered = dramas.filter(d => d.category === category);
 
-  currentList.forEach((d, index) => {
+  if (filtered.length === 0) {
+    list.innerHTML = "<p style='text-align:center'>No videos found</p>";
+    return;
+  }
+
+  filtered.forEach(d => {
     list.innerHTML += `
-      <div class="card" onclick="playVideo(${index})">
+      <div class="card" onclick="playVideo('${d.video}')">
         <img src="${d.thumbnail}">
         <p>${d.title}</p>
       </div>
@@ -22,49 +25,15 @@ function render(category) {
 }
 
 // Play
-function playVideo(index) {
-  currentIndex = index;
-
-  const videoUrl = currentList[index].video;
-  openPlayer(videoUrl);
-
-  setupAutoNext();
-}
-
-// 🔥 Auto Next Setup
-function setupAutoNext() {
-  setTimeout(() => {
-    const videoEl = document.getElementById("my-video");
-
-    if (videoEl) {
-      videoEl.onended = () => {
-        playNext();
-      };
-    }
-  }, 1000);
-}
-
-// ▶️ Next Video
-function playNext() {
-  if (currentIndex + 1 < currentList.length) {
-    currentIndex++;
-    const nextVideo = currentList[currentIndex].video;
-    openPlayer(nextVideo);
-    setupAutoNext();
-  } else {
-    alert("No more episodes");
-  }
+function playVideo(url) {
+  playerScreen.classList.remove("hidden");
+  player.src = url;
 }
 
 // Back
 function goBack() {
   playerScreen.classList.add("hidden");
-
-  const videoEl = document.getElementById("my-video");
-  if (videoEl) {
-    videoEl.pause();
-    videoEl.src = "";
-  }
+  player.src = "";
 }
 
 // Tabs

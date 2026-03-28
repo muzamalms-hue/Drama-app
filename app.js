@@ -3,20 +3,23 @@ const playerScreen = document.getElementById("playerScreen");
 const player = document.getElementById("player");
 const tabs = document.querySelectorAll(".tabs span");
 
+let currentList = [];
+let currentIndex = 0;
+
 // Render
 function render(category) {
   list.innerHTML = "";
 
-  const filtered = dramas.filter(d => d.category === category);
+  currentList = dramas.filter(d => d.category === category);
 
-  if (filtered.length === 0) {
+  if (currentList.length === 0) {
     list.innerHTML = "<p style='text-align:center'>No videos found</p>";
     return;
   }
 
-  filtered.forEach(d => {
+  currentList.forEach((d, index) => {
     list.innerHTML += `
-      <div class="card" onclick="playVideo('${d.video}')">
+      <div class="card" onclick="playVideo(${index})">
         <img src="${d.thumbnail}">
         <p>${d.title}</p>
       </div>
@@ -25,14 +28,25 @@ function render(category) {
 }
 
 // Play
-function playVideo(url) {
+function playVideo(index) {
+  currentIndex = index;
   playerScreen.classList.remove("hidden");
-  player.src = url;
+  player.src = currentList[index].video;
 }
+
+// Auto Next
+player.addEventListener("ended", () => {
+  if (currentIndex < currentList.length - 1) {
+    currentIndex++;
+    player.src = currentList[currentIndex].video;
+    player.play();
+  }
+});
 
 // Back
 function goBack() {
   playerScreen.classList.add("hidden");
+  player.pause();
   player.src = "";
 }
 

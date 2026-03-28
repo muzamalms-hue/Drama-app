@@ -4,39 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drama App</title>
 
-  <!-- Monetag Ads -->
+  <!-- Ads -->
   <script src="https://quge5.com/88/tag.min.js" data-zone="223347" async></script>
 
-  <!-- Video.js -->
-  <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet"/>
-  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
-
-  <!-- IMA SDK (VAST Ads) -->
-  <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    video {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .loader {
-      text-align: center;
-      color: white;
-      padding: 10px;
-    }
-  </style>
 </head>
-
 <body>
 
 <!-- Search -->
@@ -49,26 +21,17 @@
   <span class="active" onclick="filterCategory(event,'popular')">POPULAR</span>
   <span onclick="filterCategory(event,'trending')">TRENDING</span>
   <span onclick="filterCategory(event,'hindi')">HINDI</span>
-  <span onclick="filterCategory(event,'english')">ENGLISH</span>
-  <span onclick="filterCategory(event,'korean')">KOREAN</span>
 </div>
 
 <!-- Grid -->
 <div id="dramaList" class="grid"></div>
 
-<!-- Player Screen -->
+<!-- Player -->
 <div id="playerScreen" class="hidden">
   <button class="back-btn" onclick="goBack()">← Back</button>
 
   <div class="video-container">
-    <p class="loader" id="loader">Loading...</p>
-
-    <video
-      id="my-video"
-      class="video-js vjs-default-skin"
-      controls
-      preload="auto">
-    </video>
+    <video id="player" controls autoplay></video>
   </div>
 </div>
 
@@ -81,47 +44,7 @@
 </div>
 
 <script src="data.js"></script>
+<script src="app.js"></script>
 
-<script>
-let player;
-
-function openPlayer(videoUrl) {
-
-  // Monetag trigger
-  document.body.click();
-
-  document.getElementById("playerScreen").classList.remove("hidden");
-  document.getElementById("loader").style.display = "block";
-
-  if (player) {
-    player.dispose();
-  }
-
-  player = videojs('my-video');
-
-  // Set video source (Firebase link)
-  player.src({
-    src: videoUrl,
-    type: "video/mp4"
-  });
-
-  setupAds(videoUrl);
-}
-
-function setupAds(videoUrl) {
-
-  const adDisplayContainer = new google.ima.AdDisplayContainer(
-    document.getElementById('my-video'),
-    document.getElementById('my-video')
-  );
-
-  const adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-
-  const adsRequest = new google.ima.AdsRequest();
-
-  // 👉 Yahan apna Adsterra VAST tag lagana
-  adsRequest.adTagUrl = "PASTE_YOUR_VAST_TAG_HERE";
-
-  adsLoader.requestAds(adsRequest);
-
-  adsLoader.addEventListener(
+</body>
+</html>

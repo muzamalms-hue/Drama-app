@@ -1,29 +1,27 @@
 const dramas = [
-  // 🔴 HINDI DRAMAS
+
+  // 🔴 HINDI
   {
-    title: "Hindi Drama Ep 1",
-    video: "FIREBASE_VIDEO_LINK",
-    thumbnail: "FIREBASE_THUMB_LINK",
-    category: "hindi"
-  },
-  {
-    title: "Hindi Drama Ep 2",
-    video: "FIREBASE_VIDEO_LINK",
-    thumbnail: "FIREBASE_THUMB_LINK",
-    category: "hindi"
-  },
-  {
-    title: "Hindi Drama Ep 3",
-    video: "FIREBASE_VIDEO_LINK",
-    thumbnail: "FIREBASE_THUMB_LINK",
+    title: "The Hidden King",
+    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
+    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
     category: "hindi"
   },
 
   // 🔵 POPULAR
   {
-    title: "Popular Ep 1",
-    video: "FIREBASE_VIDEO_LINK",
-    thumbnail: "FIREBASE_THUMB_LINK",
+    title: "The Hidden King",
+    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
+    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
     category: "popular"
+  },
+
+  // 🔥 TRENDING
+  {
+    title: "The Hidden King",
+    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
+    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
+    category: "trending"
   }
+
 ];

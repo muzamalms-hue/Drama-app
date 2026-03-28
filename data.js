@@ -3,13 +3,13 @@ const dramas = [
     title: "Secret Crorepati",
     video: "WM3IIetxf4I",
     thumbnail: "https://img.youtube.com/vi/WM3IIetxf4I/hqdefault.jpg",
-    category: ["trending", "popular"]
+    category: "popular"
   },
   {
     title: "The Hidden King",
     video: "9rg53ix6hHk",
     thumbnail: "https://img.youtube.com/vi/9rg53ix6hHk/hqdefault.jpg",
-    category: ["trending", "popular"]
+    category: "popular"
   }
   {
     title: "Crorepati ki Secret Life",

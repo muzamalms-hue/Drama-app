@@ -27,35 +27,35 @@ function render(category) {
   });
 }
 
-// Play
+// ▶️ Play Video (Google Drive Preview)
 function playVideo(index) {
   currentIndex = index;
+
   playerScreen.classList.remove("hidden");
-  player.src = currentList[index].video;
+
+  player.innerHTML = `
+    <iframe 
+      src="https://drive.google.com/file/d/${currentList[index].video}/preview" 
+      allow="autoplay" 
+      width="100%" 
+      height="100%" 
+      frameborder="0">
+    </iframe>
+  `;
 }
 
-// Auto Next
-player.addEventListener("ended", () => {
-  if (currentIndex < currentList.length - 1) {
-    currentIndex++;
-    player.src = currentList[currentIndex].video;
-    player.play();
-  }
-});
-
-// Back
+// 🔙 Back
 function goBack() {
   playerScreen.classList.add("hidden");
-  player.pause();
-  player.src = "";
+  player.innerHTML = "";
 }
 
-// Tabs
+// 🔄 Tabs
 function filterCategory(event, cat) {
   tabs.forEach(t => t.classList.remove("active"));
   event.target.classList.add("active");
   render(cat);
 }
 
-// Default
+// 🚀 Default Load
 render("popular");

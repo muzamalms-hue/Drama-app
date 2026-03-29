@@ -26,9 +26,9 @@ const dramas = [
 
   // 🔥 INTERNET ARCHIVE VIDEO
   {
-    title: "Archive Video",
+    title: "The Hidden King",
     video: "https://archive.org/embed/lv_0_20260324003702",
-    thumbnail: "https://dummyimage.com/300x170/000/fff&text=Archive",
+    thumbnail: "https://img.youtube.com/vi/9rg53ix6hHk/hqdefault.jpg",
     category: "popular"
   }
 ];

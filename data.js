@@ -28,7 +28,7 @@ const dramas = [
   {
     title: "The Hidden King",
     video: "https://archive.org/embed/lv_0_20260324003702",
-    thumbnail: "https://img.youtube.com/vi/9rg53ix6hHk/hqdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/HJYPm6ZAXZY/hqdefault.jpg",
     category: "popular"
   }
 ];

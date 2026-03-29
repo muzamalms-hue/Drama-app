@@ -1,27 +1,15 @@
 const dramas = [
-
-  // 🔴 HINDI
   {
-    title: "The Hidden King",
-    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
-    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
-    category: "hindi"
-  },
-
-  // 🔵 POPULAR
-  {
-    title: "The Hidden King",
-    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
-    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
+    title: "Crorepati ki Secret Life",
+    video: "https://www.youtube.com/embed/HJYPm6ZAXZY",
+    thumbnail: "https://img.youtube.com/vi/HJYPm6ZAXZY/hqdefault.jpg",
     category: "popular"
   },
 
-  // 🔥 TRENDING
   {
-    title: "The Hidden King",
-    video: "https://drive.google.com/uc?export=download&id=1ZhAkhPU30Yo4v038BOdrWbKZC6af7GUa",
-    thumbnail: "https://drive.google.com/uc?export=view&id=1FYhRUsN8stYpa3rNgqcYOq2terWAcdfQ",
-    category: "trending"
+    title: "Archive Video",
+    video: "https://archive.org/embed/lv_0_20260324003702",
+    thumbnail: "https://via.placeholder.com/300x170?text=Archive+Video",
+    category: "popular"
   }
-
 ];

@@ -1,16 +1,10 @@
-function playVideo(index) {
-  currentIndex = index;
-
+function playVideo(url) {
   playerScreen.classList.remove("hidden");
 
-  player.innerHTML = `
-    <iframe 
-      src="https://drive.google.com/file/d/${currentList[index].video}/preview?autoplay=1&mute=1"
-      width="100%" 
-      height="100%" 
-      allow="autoplay; fullscreen"
-      allowfullscreen
-      frameborder="0">
-    </iframe>
-  `;
+  // autoplay only for YouTube
+  if (url.includes("youtube")) {
+    player.src = url + "?autoplay=1";
+  } else {
+    player.src = url;
+  }
 }
